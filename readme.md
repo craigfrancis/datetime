@@ -23,11 +23,11 @@ A right hand click will open an `NSMenu`, allowing the user to quit.
 
 The majority of the code is in HTML/CSS/JavaScript (found in the [View](./xcode/DateTime/View) folder).
 
-PHP is used for date formatting and the timestamp diff.
+PHP is used for date formatting, and the timestamp diff.
 
 JavaScript does this by calling `DateTimeApp.message()`, which is received by the swift function `DateTimeMessage`, and passed on to PHP. The response is returned to JavaScript.
 
-Each time the popover is opened, is calls the `dateTime.onShow()` function, which allows the JavaScript to reset the fields.
+Each time the popover is opened, is calls `dateTime.onShow()`, which allows the JavaScript to reset the fields.
 
 For styling, the popover uses NSAppearanceNameVibrantDark, while the WebView has `drawsBackground = false`.
 
