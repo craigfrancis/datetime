@@ -29,7 +29,7 @@ JavaScript does this by calling `DateTimeApp.message()`, which is received by th
 
 Each time the popover is opened, it calls `dateTime.onShow()`, which allows the JavaScript to reset the fields.
 
-For styling, the popover uses NSAppearanceNameVibrantDark, while the WebView has `drawsBackground = false`.
+For styling, the popover uses `NSAppearanceNameVibrantDark`, while the WebView has `drawsBackground = false`.
 
 To make it load faster, the popover has `animates = false`, and the JavaScript uses `setTimeout` so it does not need to wait for the PHP to respond.
 
