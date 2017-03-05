@@ -1,0 +1,87 @@
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		overflow: hidden;
+		height: 100%;
+	}
+
+	#widget {
+		width: 455px;
+		height: 450px;
+		background: url("./background.png") no-repeat 0 0;
+		color: #FFF;
+		font-family: "trebuchet ms", arial, helvetica, verdana, sans-serif;
+		font-size: 12px;
+	}
+
+	#widgetBody {
+		padding: 40px 12px 0;
+	}
+
+	#widget #widgetBody p {
+		padding: 0 0 1em 0;
+	}
+
+	#widget #widgetBody a {
+		color: #FFF;
+		text-decoration: none;
+	}
+
+		#widget #widgetBody a:hover {
+			color: #0095fe;
+		}
+
+	#widget #widgetBody fieldset {
+		border: 0;
+	}
+
+		#widget #widgetBody fieldset#date,
+		#widget #widgetBody fieldset#diff {
+			background: url("./divider.png") no-repeat 50% 100%;
+			padding-bottom: 20px;
+			margin-bottom: 15px;
+		}
+
+	.row {
+		padding: 5px 0 0 4.5em;
+		clear: both;
+		min-height: 1.4em;
+		vertical-align: middle;
+	}
+
+	.row .label { /* NS7: Cannot apply styles to label object */
+		float: left;
+		width: 4em;
+		margin: 0.2em 0 0 -4.5em;
+		text-align: right;
+	}
+
+	.row .text {
+		display: block;
+		padding: 0.2em 0 0 0;
+	}
+
+	.row.date .input input {
+		text-align: center;
+	}
+
+	#formatButtons {
+		margin: 12px 12px 20px;
+		padding: 5px;
+		overflow: auto;
+	}
+
+		#formatButtons ul {
+			float: left;
+			width: 25%;
+			list-style: none;
+		}
+
+			#formatButtons ul li a {
+				display: block;
+				padding: 2px 0 0 0;
+			}
