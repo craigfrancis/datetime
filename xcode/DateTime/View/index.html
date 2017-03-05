@@ -9,94 +9,92 @@
 <body>
 
 	<div id="widget">
-		<div id="widgetBody">
-			<fieldset id="date">
+		<fieldset id="date">
 
-				<div class="row">
-					<span class="label"><label for="dateTimestamp">Time:</label></span>
-					<span class="input"><input type="text" name="dateTimestamp" id="dateTimestamp" value="" /></span>
-				</div>
-				<div class="row date">
-					<span class="label"><label for="dateTimeD">Date:</label></span>
-					<span class="input">
-						<input type="text" name="dateY" id="dateY" size="4" maxlength="4" /> -
-						<input type="text" name="dateM" id="dateM" size="2" maxlength="2" /> -
-						<input type="text" name="dateD" id="dateD" size="2" maxlength="2" /> &nbsp;
-						<input type="text" name="dateH" id="dateH" size="2" maxlength="2" /> :
-						<input type="text" name="dateI" id="dateI" size="2" maxlength="2" /> :
-						<input type="text" name="dateS" id="dateS" size="2" maxlength="2" />
-					</span>
-				</div>
-				<div class="row">
-					<span class="label">Human:</span>
-					<span class="input text" id="humanForm">N/A</span>
-				</div>
+			<div class="row">
+				<span class="label"><label for="dateTimestamp">Time:</label></span>
+				<span class="input"><input type="text" name="dateTimestamp" id="dateTimestamp" value="" /></span>
+			</div>
+			<div class="row date">
+				<span class="label"><label for="dateTimeD">Date:</label></span>
+				<span class="input">
+					<input type="text" name="dateY" id="dateY" size="4" maxlength="4" /> -
+					<input type="text" name="dateM" id="dateM" size="2" maxlength="2" /> -
+					<input type="text" name="dateD" id="dateD" size="2" maxlength="2" /> &nbsp;
+					<input type="text" name="dateH" id="dateH" size="2" maxlength="2" /> :
+					<input type="text" name="dateI" id="dateI" size="2" maxlength="2" /> :
+					<input type="text" name="dateS" id="dateS" size="2" maxlength="2" />
+				</span>
+			</div>
+			<div class="row">
+				<span class="label">Human:</span>
+				<span class="input text" id="humanForm">N/A</span>
+			</div>
 
-			</fieldset>
-			<fieldset id="diff">
+		</fieldset>
+		<fieldset id="diff">
 
-				<div class="row">
-					<span class="label"><label for="diffTimeA">Time A:</label></span>
-					<span class="input"><input type="text" name="diffTimeA" id="diffTimeA" value="" /></span>
-				</div>
-				<div class="row">
-					<span class="label"><label for="diffTimeB">Time B:</label></span>
-					<span class="input"><input type="text" name="diffTimeB" id="diffTimeB" value="" /></span>
-				</div>
-				<div class="row">
-					<span class="label">Diff:</span>
-					<span class="input text" id="diffOutput">N/A</span>
-				</div>
+			<div class="row">
+				<span class="label"><label for="diffTimeA">Time A:</label></span>
+				<span class="input"><input type="text" name="diffTimeA" id="diffTimeA" value="" /></span>
+			</div>
+			<div class="row">
+				<span class="label"><label for="diffTimeB">Time B:</label></span>
+				<span class="input"><input type="text" name="diffTimeB" id="diffTimeB" value="" /></span>
+			</div>
+			<div class="row">
+				<span class="label">Diff:</span>
+				<span class="input text" id="diffOutput">N/A</span>
+			</div>
 
-			</fieldset>
-			<fieldset id="format">
+		</fieldset>
+		<fieldset id="format">
 
-				<div class="row">
-					<span class="label"><label for="formatCode">Format:</label></span>
-					<span class="input"><input type="text" name="formatCode" id="formatCode" value="" /></span>
-				</div>
-				<div class="row">
-					<span class="label"><label for="timestamp">Output:</label></span>
-					<span class="input text" id="formatOutput">N/A</span>
-				</div>
-				<div id="formatButtons">
-					<ul>
-						<li><a href="#" rel="g" >hour: <strong>0 - 12</strong></a></li>
-						<li><a href="#" rel="G" >hour: <strong>0 - 23</strong></a></li>
-						<li><a href="#" rel="h" >hour: <strong>00 - 12</strong></a></li>
-						<li><a href="#" rel="H" >hour: <strong>00 - 23</strong></a></li>
-						<li><a href="#" rel="i" >min:  <strong>00 - 59</strong></a></li>
-						<li><a href="#" rel="s" >sec:  <strong>00 - 59</strong></a></li>
-						<li><a href="#" rel="a ">morn:  <strong>am</strong></a></li>
-						<li><a href="#" rel="A ">morn:  <strong>AM</strong></a></li>
-					</ul>
-					<ul>
-						<li><a href="#" rel="j" >day: <strong>1 - 31</strong></a></li>
-						<li><a href="#" rel="d" >day: <strong>01 - 31</strong></a></li>
-						<li><a href="#" rel="S ">day: <strong>st</strong></a></li>
-						<li><a href="#" rel="D ">day: <strong>Mon</strong></a></li>
-						<li><a href="#" rel="l ">day: <strong>Monday</strong></a></li>
-						<li><a href="#" rel="w" >day: <strong>0 - 6</strong></a></li>
-						<li><a href="#" rel="z" >day: <strong>0 - 365</strong></a></li>
-					</ul>
-					<ul>
-						<li><a href="#" rel="n" >month: <strong>1 - 12</strong></a></li>
-						<li><a href="#" rel="m" >month: <strong>01 - 12</strong></a></li>
-						<li><a href="#" rel="t" >month: <strong>28 - 31</strong></a></li>
-						<li><a href="#" rel="M ">month: <strong>Jan</strong></a></li>
-						<li><a href="#" rel="F ">month: <strong>January</strong></a></li>
-						<li><a href="#" rel="Y" >year:  <strong>2006</strong></a></li>
-						<li><a href="#" rel="y" >year:  <strong>06</strong></a></li>
-					</ul>
-					<ul>
-						<li><a href="#" class="replace" rel="Y-m-d H:i:s">example: <strong>ISO</strong></a></li>
-						<li><a href="#" class="replace" rel="D jS M Y g:ia">example: <strong>Short</strong></a></li>
-						<li><a href="#" class="replace" rel="l jS F Y, g:i:sa">example: <strong>Full</strong></a></li>
-					</ul>
-				</div>
+			<div class="row">
+				<span class="label"><label for="formatCode">Format:</label></span>
+				<span class="input"><input type="text" name="formatCode" id="formatCode" value="" /></span>
+			</div>
+			<div class="row">
+				<span class="label"><label for="timestamp">Output:</label></span>
+				<span class="input text" id="formatOutput">N/A</span>
+			</div>
+			<div id="formatButtons">
+				<ul>
+					<li><a href="#" rel="g" >hour: <strong>0 - 12</strong></a></li>
+					<li><a href="#" rel="G" >hour: <strong>0 - 23</strong></a></li>
+					<li><a href="#" rel="h" >hour: <strong>00 - 12</strong></a></li>
+					<li><a href="#" rel="H" >hour: <strong>00 - 23</strong></a></li>
+					<li><a href="#" rel="i" >min:  <strong>00 - 59</strong></a></li>
+					<li><a href="#" rel="s" >sec:  <strong>00 - 59</strong></a></li>
+					<li><a href="#" rel="a ">morn:  <strong>am</strong></a></li>
+					<li><a href="#" rel="A ">morn:  <strong>AM</strong></a></li>
+				</ul>
+				<ul>
+					<li><a href="#" rel="j" >day: <strong>1 - 31</strong></a></li>
+					<li><a href="#" rel="d" >day: <strong>01 - 31</strong></a></li>
+					<li><a href="#" rel="S ">day: <strong>st</strong></a></li>
+					<li><a href="#" rel="D ">day: <strong>Mon</strong></a></li>
+					<li><a href="#" rel="l ">day: <strong>Monday</strong></a></li>
+					<li><a href="#" rel="w" >day: <strong>0 - 6</strong></a></li>
+					<li><a href="#" rel="z" >day: <strong>0 - 365</strong></a></li>
+				</ul>
+				<ul>
+					<li><a href="#" rel="n" >month: <strong>1 - 12</strong></a></li>
+					<li><a href="#" rel="m" >month: <strong>01 - 12</strong></a></li>
+					<li><a href="#" rel="t" >month: <strong>28 - 31</strong></a></li>
+					<li><a href="#" rel="M ">month: <strong>Jan</strong></a></li>
+					<li><a href="#" rel="F ">month: <strong>January</strong></a></li>
+					<li><a href="#" rel="Y" >year:  <strong>2006</strong></a></li>
+					<li><a href="#" rel="y" >year:  <strong>06</strong></a></li>
+				</ul>
+				<ul>
+					<li><a href="#" class="replace" rel="Y-m-d H:i:s">example: <strong>ISO</strong></a></li>
+					<li><a href="#" class="replace" rel="D jS M Y g:ia">example: <strong>Short</strong></a></li>
+					<li><a href="#" class="replace" rel="l jS F Y, g:i:sa">example: <strong>Full</strong></a></li>
+				</ul>
+			</div>
 
-			</fieldset>
-		</div>
+		</fieldset>
 	</div>
 
 </body>

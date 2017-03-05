@@ -12,76 +12,86 @@
 	#widget {
 		width: 455px;
 		height: 450px;
-		background: url("./background.png") no-repeat 0 0;
+		margin: 0 auto;
+		background: #202021;
+		background-image: linear-gradient(to bottom, #363637 0, #202021 20px, #202021 100%); /* W3C */
 		color: #FFF;
-		font-family: "trebuchet ms", arial, helvetica, verdana, sans-serif;
-		font-size: 12px;
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-size: 13px;
 	}
 
-	#widgetBody {
-		padding: 40px 12px 0;
-	}
-
-	#widget #widgetBody p {
+	#widget p {
 		padding: 0 0 1em 0;
 	}
 
-	#widget #widgetBody a {
+	#widget a {
 		color: #FFF;
 		text-decoration: none;
 	}
 
-		#widget #widgetBody a:hover {
-			color: #0095fe;
-		}
-
-	#widget #widgetBody fieldset {
-		border: 0;
+	#widget a:hover {
+		color: #0095FE;
 	}
 
-		#widget #widgetBody fieldset#date,
-		#widget #widgetBody fieldset#diff {
-			background: url("./divider.png") no-repeat 50% 100%;
-			padding-bottom: 20px;
-			margin-bottom: 15px;
-		}
+	#widget fieldset {
+		border: 0;
+		padding: 17px;
+	}
 
-	.row {
-		padding: 5px 0 0 4.5em;
+	#widget fieldset#date {
+		background: url("./logo.png") no-repeat 313px 15px; /* 455 - 15 - 127 */
+		padding-top: 44px; /* 24 + 15 + 5 */
+	}
+
+	#widget fieldset#diff,
+	#widget fieldset#format {
+		background: url("./divider.png") no-repeat 50% 0;
+	}
+
+	#widget .row {
+		padding: 0 0 0 7em;
 		clear: both;
-		min-height: 1.4em;
+		line-height: 1.65em;
 		vertical-align: middle;
 	}
 
-	.row .label { /* NS7: Cannot apply styles to label object */
+	#widget .row .label { /* NS7: Cannot apply styles to label object */
 		float: left;
-		width: 4em;
-		margin: 0.2em 0 0 -4.5em;
+		width: 6em;
+		margin: 0 0 0 -7em;
 		text-align: right;
 	}
 
-	.row .text {
-		display: block;
-		padding: 0.2em 0 0 0;
+	#widget .row .label,
+	#widget .row .label label,
+	#widget .row .input,
+	#widget .row .input input {
+		vertical-align: middle;
 	}
 
-	.row.date .input input {
+	#widget .row .input input {
+		border: 0;
+		line-height: 1.6em;
+		padding: 0 0.2em;
+	}
+
+	#widget .row.date .input input {
 		text-align: center;
 	}
 
 	#formatButtons {
-		margin: 12px 12px 20px;
-		padding: 5px;
+		clear: both;
+		padding: 12px 0 0 0;
 		overflow: auto;
 	}
 
-		#formatButtons ul {
-			float: left;
-			width: 25%;
-			list-style: none;
-		}
+	#formatButtons ul {
+		float: left;
+		width: 25%;
+		list-style: none;
+	}
 
-			#formatButtons ul li a {
-				display: block;
-				padding: 2px 0 0 0;
-			}
+	#formatButtons ul li a {
+		display: block;
+		padding: 2px 0 0 0;
+	}
