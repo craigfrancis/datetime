@@ -15,15 +15,15 @@ A simple widget to help with:
 
 The XCode version of this widget, using Swift 3, uses a WebView.
 
-It does this by adding an icon to NSStatusBar (the system menu bar), where a left click will open an NSPopover.
+It does this by adding an icon to `NSStatusBar` (the system menu bar), where a left click will open an `NSPopover`.
 
 The widget intentionally remains open until a second left click (so multiple values can be copy/pasted).
 
-A right hand click will open an NSMenu, allowing the user to quit.
+A right hand click will open an `NSMenu`, allowing the user to quit.
 
 The majority of the code is in HTML/CSS/JavaScript (found in the [View](./xcode/DateTime/View) folder).
 
-But PHP is used for date formatting and the timestamp diff.
+PHP is used for date formatting and the timestamp diff.
 
 JavaScript does this by calling `DateTimeApp.message()`, which is received by the swift function `DateTimeMessage`, and passed on to PHP. The response is returned to JavaScript.
 
