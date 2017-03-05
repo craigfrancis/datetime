@@ -28,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         }
 
         popover.contentViewController = dateViewController
+        popover.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
         popover.animates = false
 
     }

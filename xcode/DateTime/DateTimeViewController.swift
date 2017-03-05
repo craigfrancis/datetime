@@ -19,10 +19,11 @@ class DateTimeViewController: NSViewController {
 
         let index_url = NSURL(fileURLWithPath:Bundle.main.path(forResource: "index", ofType: "html")!)
         let request = NSURLRequest(url: index_url as URL);
-        
+
         self.webView.frameLoadDelegate = self
+        self.webView.drawsBackground = false;
         self.webView.mainFrame.load(request as URLRequest!);
-        
+
     }
 
     override var representedObject: Any? {

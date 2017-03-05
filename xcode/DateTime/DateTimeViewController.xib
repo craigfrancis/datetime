@@ -25,8 +25,10 @@
                     <webPreferences key="preferences" defaultFontSize="16" defaultFixedFontSize="13" minimumFontSize="0">
                         <nil key="identifier"/>
                     </webPreferences>
+                    <accessibility description="Date Time"/>
                 </webView>
             </subviews>
+            <accessibility description="Date Time"/>
             <point key="canvasLocation" x="124.5" y="237"/>
         </customView>
     </objects>
