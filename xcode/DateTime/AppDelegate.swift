@@ -31,6 +31,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         popover.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
         popover.animates = false
 
+        statusItem.highlightMode = false // Highlight bodge: Stop the highlight flicker (see async call below).
+
     }
 
     func applicationWillTerminate(_ aNotification: Notification) {
@@ -48,11 +50,17 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
             self.dateViewController?.windowShown();
 
+            DispatchQueue.main.async(execute: { // Highlight bodge: The button.action naturally adds a highlight, but is removed as soon as the popover is shown.
+                    self.statusItem.highlightMode = true
+                    button.isHighlighted = true
+                })
+
         }
     }
 
     func closePopover(sender: AnyObject?) {
         popover.performClose(sender)
+        statusItem.highlightMode = false // Highlight bodge: Stop the highlight flicker (see async call below).
     }
 
     func statusBarButtonClicked(sender: NSStatusBarButton) {
@@ -62,6 +70,9 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         if event.type == NSEventType.rightMouseUp {
 
             closePopover(sender: nil)
+
+            statusItem.highlightMode = true // Highlight bodge: Stop the highlight flicker (see async call below).
+            statusItem.button?.isHighlighted = true
 
             let contextMenu = NSMenu();
             contextMenu.addItem(NSMenuItem(title: "Quit", action: #selector(self.quit(sender:)), keyEquivalent: ""))
