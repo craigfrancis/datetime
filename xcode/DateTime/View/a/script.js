@@ -4,7 +4,7 @@
 		//--------------------------------------------------
 		// Standard date format
 
-			this.standardDateFormat = 'l jS F Y, g:i:sa';
+			this.standardDateFormat = 'l jS F Y - g:i:sa';
 			this.defaultDiffTimeA = '11:10';
 			this.defaultDiffTimeB = '11:13';
 			this.defaultDiffTime = 180;
@@ -172,7 +172,7 @@
 					dateTime.dateS.value = newDate.getSeconds();
 
 					setTimeout(function() {
-							dateTime.humanForm.textContent = dateTime.dateFormatStandard(timestamp);
+							dateTime.humanForm.textContent = dateTime.dateFormatStandard(timestamp, 'l jS F Y - H:i:s (ga)');
 						});
 
 			}
@@ -203,7 +203,7 @@
 						dateTime.dateTimestamp.value = timestamp;
 
 						setTimeout(function() {
-								dateTime.humanForm.textContent = dateTime.dateFormatStandard(timestamp);
+								dateTime.humanForm.textContent = dateTime.dateFormatStandard(timestamp, dateTime.standardDateFormat);
 							});
 
 					} else {
@@ -385,8 +385,8 @@
 		// Function to call the external PHP file and return
 		// a date/time string in a specific format
 
-			this.dateFormatStandard = function (timestamp) {
-				return dateTime.dateFormat(timestamp, dateTime.standardDateFormat);
+			this.dateFormatStandard = function (timestamp, format) {
+				return dateTime.dateFormat(timestamp, format);
 			}
 
 			this.dateFormat = function (timestamp, format) {
