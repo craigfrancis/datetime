@@ -14,21 +14,21 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     @IBOutlet weak var window: NSWindow!
 
-    let statusItem = NSStatusBar.system().statusItem(withLength: NSSquareStatusItemLength)
+    let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
     let popover = NSPopover();
-    let dateViewController = DateTimeViewController(nibName: "DateTimeViewController", bundle: nil);
+    let dateViewController = DateTimeViewController(nibName: NSNib.Name(rawValue: "DateTimeViewController"), bundle: nil);
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
         if let button = statusItem.button {
-            button.image = NSImage(named: "StatusBarButtonImage")
+            button.image = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImage"))
             button.action = #selector(self.statusBarButtonClicked(sender:))
-            button.sendAction(on: [.leftMouseUp, .rightMouseUp])
+            button.sendAction(on: [NSEvent.EventTypeMask.leftMouseUp, NSEvent.EventTypeMask.rightMouseUp])
         }
 
         popover.contentViewController = dateViewController
-        popover.appearance = NSAppearance(named: NSAppearanceNameVibrantDark)
+        popover.appearance = NSAppearance(named: NSAppearance.Name.vibrantDark)
         popover.animates = false
 
         statusItem.highlightMode = false // Highlight bodge: Stop the highlight flicker (see async call below).
@@ -39,8 +39,8 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         // Insert code here to tear down your application
     }
 
-    func quit(sender: AnyObject?) {
-        NSApplication.shared().terminate(nil)
+    @objc func quit(sender: AnyObject?) {
+        NSApplication.shared.terminate(nil)
     }
 
     func showPopover(sender: AnyObject?) {
@@ -48,7 +48,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
             popover.show(relativeTo: button.bounds, of: button, preferredEdge: NSRectEdge.minY);
 
-            self.dateViewController?.windowShown();
+            self.dateViewController.windowShown();
 
             DispatchQueue.main.async(execute: { // Highlight bodge: The button.action naturally adds a highlight, but is removed as soon as the popover is shown.
                     self.statusItem.highlightMode = true
@@ -63,11 +63,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         statusItem.highlightMode = false // Highlight bodge: Stop the highlight flicker (see async call below).
     }
 
-    func statusBarButtonClicked(sender: NSStatusBarButton) {
+    @objc func statusBarButtonClicked(sender: NSStatusBarButton) {
 
         let event = NSApp.currentEvent!
 
-        if event.type == NSEventType.rightMouseUp {
+        if event.type == NSEvent.EventType.rightMouseUp {
 
             closePopover(sender: nil)
 

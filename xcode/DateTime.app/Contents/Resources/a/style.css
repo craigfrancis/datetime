@@ -1,0 +1,97 @@
+
+	* {
+		margin: 0;
+		padding: 0;
+	}
+
+	html {
+		overflow: hidden;
+		height: 100%;
+	}
+
+	#widget {
+		width: 455px;
+		height: 450px;
+		margin: 0 auto;
+		background: #202021;
+		background-image: linear-gradient(to bottom, #363637 0, #202021 20px, #202021 100%); /* W3C */
+		color: #FFF;
+		font-family: arial, helvetica, verdana, sans-serif;
+		font-size: 13px;
+	}
+
+	#widget p {
+		padding: 0 0 1em 0;
+	}
+
+	#widget a {
+		color: #FFF;
+		text-decoration: none;
+	}
+
+	#widget a:hover {
+		color: #0095FE;
+	}
+
+	#widget fieldset {
+		border: 0;
+		padding: 17px;
+	}
+
+	#widget fieldset#date {
+		background: url("./logo.png") no-repeat 313px 15px; /* 455 - 15 - 127 */
+		padding-top: 44px; /* 24 + 15 + 5 */
+	}
+
+	#widget fieldset#diff,
+	#widget fieldset#format {
+		background: url("./divider.png") no-repeat 50% 0;
+	}
+
+	#widget .row {
+		padding: 0 0 0 7em;
+		clear: both;
+		line-height: 1.65em;
+		vertical-align: middle;
+	}
+
+	#widget .row .label { /* NS7: Cannot apply styles to label object */
+		float: left;
+		width: 6em;
+		margin: 0 0 0 -7em;
+		text-align: right;
+	}
+
+	#widget .row .label,
+	#widget .row .label label,
+	#widget .row .input,
+	#widget .row .input input {
+		vertical-align: middle;
+	}
+
+	#widget .row .input input {
+		border: 0;
+		line-height: 1.6em;
+		padding: 0 0.2em;
+	}
+
+	#widget .row.date .input input {
+		text-align: center;
+	}
+
+	#formatButtons {
+		clear: both;
+		padding: 12px 0 0 0;
+		overflow: auto;
+	}
+
+	#formatButtons ul {
+		float: left;
+		width: 25%;
+		list-style: none;
+	}
+
+	#formatButtons ul li a {
+		display: block;
+		padding: 2px 0 0 0;
+	}

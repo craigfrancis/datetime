@@ -60,7 +60,7 @@ extension DateTimeViewController: WebFrameLoadDelegate {
         }
     }
 
-    func DateTimeMessage(message_type: String, message_value: String) -> String {
+    @objc func DateTimeMessage(message_type: String, message_value: String) -> String {
         
         var php_path = "";
         
@@ -84,7 +84,7 @@ extension DateTimeViewController: WebFrameLoadDelegate {
         let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let output = NSString(data: data, encoding: String.Encoding.utf8.rawValue)
 
-        return output as! String;
+        return output! as String;
 
     }
 
