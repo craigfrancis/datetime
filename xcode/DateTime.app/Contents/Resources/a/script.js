@@ -262,32 +262,63 @@
 
 			}
 
-			this.updateDiffResponse = function(diff) {
+			this.updateDiffResponse = function(input_seconds) {
 
 				//--------------------------------------------------
 				// Display to the user
 
-					diff = parseFloat(diff);
+					input_seconds = parseFloat(input_seconds);
 
-					if (diff == null || isNaN(diff)) {
+					if (input_seconds == null || isNaN(input_seconds)) {
 
 						dateTime.diffOutput.textContent = 'Not Available';
 
-					} else if (diff <= 60 && diff >= -60) {
-
-						dateTime.diffOutput.textContent = diff + ' Seconds';
-
-					} else if (diff <= 3600 && diff >= -3600) {
-
-						dateTime.diffOutput.textContent = (Math.round((diff / 60) * 100) / 100) + ' Minutes';
-
-					} else if (diff <= 86400 && diff >= -86400) {
-
-						dateTime.diffOutput.textContent = (Math.round((diff / 3600) * 100) / 100) + ' Hours';
-
 					} else {
 
-						dateTime.diffOutput.textContent = (Math.round((diff / 86400) * 100) / 100) + ' Days';
+						//--------------------------------------------------
+						// Maths
+
+							output_seconds = (input_seconds % 60);
+							input_seconds -= output_seconds;
+
+							min_seconds = (input_seconds % 3600);
+							input_seconds -= min_seconds;
+							output_minutes = (min_seconds / 60);
+
+							hour_seconds = (input_seconds % 86400);
+							input_seconds -= hour_seconds;
+							output_hours = (hour_seconds / 3600);
+
+							day_seconds = (input_seconds % 604800);
+							input_seconds -= day_seconds;
+							output_days = (day_seconds / 86400);
+
+							output_weeks = (input_seconds / 604800);
+
+						//--------------------------------------------------
+						// Text
+
+							output_text = [];
+
+							if (output_weeks    > 0) output_text.push(output_weeks    + ' week'   + (output_weeks    != 1 ? 's' : ''));
+							if (output_days     > 0) output_text.push(output_days     + ' day'    + (output_days     != 1 ? 's' : ''));
+							if (output_hours    > 0) output_text.push(output_hours    + ' hour'   + (output_hours    != 1 ? 's' : ''));
+							if (output_minutes  > 0) output_text.push(output_minutes  + ' minute' + (output_minutes  != 1 ? 's' : ''));
+
+							if (output_seconds > 0 || output_text.length == 0) {
+								output_text.push(output_seconds  + ' second' + (output_seconds != 1 ? 's' : ''));
+							}
+
+						//--------------------------------------------------
+						// Grammar
+
+							output_text = output_text.join(', ');
+							output_text = output_text.replace(/, ([^,]+)$/, ', and $1');
+
+						//--------------------------------------------------
+						// Output
+
+							dateTime.diffOutput.textContent = output_text + '.';
 
 					}
 
