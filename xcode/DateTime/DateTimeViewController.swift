@@ -22,7 +22,7 @@ class DateTimeViewController: NSViewController {
 
         self.webView.frameLoadDelegate = self
         self.webView.drawsBackground = false;
-        self.webView.mainFrame.load(request as URLRequest!);
+        self.webView.mainFrame.load(request as URLRequest?);
 
     }
 
@@ -75,7 +75,7 @@ extension DateTimeViewController: WebFrameLoadDelegate {
         let task = Process()
         let pipe = Pipe()
 
-        task.launchPath = "/usr/bin/php"
+        task.launchPath = "/usr/local/bin/php"
         task.arguments = [php_path, message_value]
         task.standardOutput = pipe
 

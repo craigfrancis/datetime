@@ -17,12 +17,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     let statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.squareLength)
 
     let popover = NSPopover();
-    let dateViewController = DateTimeViewController(nibName: NSNib.Name(rawValue: "DateTimeViewController"), bundle: nil);
+    let dateViewController = DateTimeViewController(nibName: "DateTimeViewController", bundle: nil);
 
     func applicationDidFinishLaunching(_ aNotification: Notification) {
 
         if let button = statusItem.button {
-            button.image = NSImage(named: NSImage.Name(rawValue: "StatusBarButtonImage"))
+            button.image = NSImage(named: "StatusBarButtonImage")
             button.action = #selector(self.statusBarButtonClicked(sender:))
             button.sendAction(on: [NSEvent.EventTypeMask.leftMouseUp, NSEvent.EventTypeMask.rightMouseUp])
         }
